@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abhishek Tripathi</title>
+  <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+  
+  <div class="help" id="help"><button>Instruction</button>
+    <textarea id="textArea1" >
+      Gameplay:
+
+Take turns rolling Three dice.
+Decide whether to keep your score or roll again to increase it.
+Accumulate your scores unless you roll a "1" on either die, which resets your turn.
+Rolling double 1s ("snake eyes") resets your entire game score.
+Scoring:
+
+Calculate your score by summing the values of the two dice.
+Add your score to your total if you choose to keep it.
+Rolling a "1" on either die resets your turn.
+Winning:
+
+Reach a set score or complete a specific number of rounds to determine the winner.
+Optional Rules:
+
+Consider allowing players to bank points after each roll to avoid losing them on a "1."
+Customize rules as desired.
+Strategy Tips:
+
+Balance risk and reward when deciding to roll or keep your score.
+Monitor your score and your opponents' scores to make informed decisions.
+Enjoy the "Roll the Dice" game with three players, where a blend of luck and strategy makes for an exciting competition!
+    </textarea>
+  </div>
+
+  <div class="container">
+    <div class="dice-wrapper">
+      <div class="box1">
+        <h1>Player 1</h1>
+        <img src="/dice-1.png" alt="" id="die-1">
+      </div>
+      <div class="box2">
+        <h1>Player 2</h1>
+        <img src="/dice-2.png" alt="" id="die-2">
+      </div>
+      <div class="box3">
+        <h1>Player 3</h1>
+        <img src="/dice-3.png" alt="" id="die-3">
+      </div>
+    </div>
+    <p id="total">Let See Who Will Win</p>
+    <button onclick="roll()" class="glow-on-hover">Roll The Dice</button>
+  </div>
+</body>
+<script src="/index.js"></script>
+
+</html>
