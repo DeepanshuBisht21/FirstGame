@@ -1,91 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-<!--     <link rel="stylesheet" href="/index.css"> -->
     <style>
-        .mid{
-    margin-top: 120px;
-    height: 400px;
-    width: 600px;
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    background: linear-gradient(#e66465, #9198e5);
-}
-img{
-    height: 160px;
-    width: 160px;
-    margin: 10px;
-}
-.container{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    background-color: orange;
-    height: 100vh;
-}
-.boxes{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-}
-button{
-    padding:6px 10px;
-    font-size: 20px;
-    border-radius: 14px;
-    border: none;
-    cursor: pointer;
-    background-color: blue;
-    color: white;
-    transition: 0.5s;
-}
-button:hover{
-    transform: scale(1.1,1.1);
-    transition: 0.6s;
-}
+        .container {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 50px 60px;
+        }
+
+        a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .boxes {
+            height: 20px;
+            width: 20px;
+            transform: rotate(20deg);
+            border-radius: 4px;
+            background-color: #e92ed3;
+            position: relative;
+            margin: 20px 30px;
+
+            animation: boxAnim linear 3s infinite;
+            /* transition: 3s; */
+        }
+
+        @keyframes boxAnim {
+            0% {
+                height: 20px;
+                width: 20px;
+                transform: rotate(20deg);
+                transform: rotate(300deg);
+                position: relative;
+                top: 0;
+
+            }
+
+            /* 25% {
+                position: relative;
+                top: 100px;
+                transform: scale(1.4, 1.4);
+                transform: rotate(50deg);
+                transition: 1s;
+            } */
+
+            50% {
+                transition: 2s;
+                position: relative;
+                transform: scale(2, 2);
+                z-index: -2;
+                top: 370px;
+
+            }
+        }
+
+        .boxContain {
+            height: 400px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
+
+        .newBox {
+            margin-top: 13%;
+            margin-left: 4%;
+
+            animation: LudoM alternate 1s infinite ease;
+
+        }
+
+        @keyframes LudoM {
+            /* 0%{
+             position: relative;
+             left: 300px;
+             top: 300px;
+                transform: rotate(40deg);
+                transition: 4s ;
+                position: absolute;
+            } */
+            /* 50%{
+                margin-left: 200px;
+                transform: rotate(40deg);
+                transition: 2s all;
+            } */
+        }
     </style>
+    <link rel="stylesheet" href="/index.css">
 </head>
+
 <body>
-    <div class="container">
-        <div class="mid">
-            <div class="boxes">
-                <img id="die1" src="image/dice-1.png" alt="">
-                <img id="die2" src="image/dice-2.png" alt="">
-            </div>
-            <div class="boxes"><button>Roll Dice</button></div>
-        </div>
+    <center>
+        <h1 style="font-size: 50px; position: absolute; margin-left: 30%;margin-top: 5%; color: #ff0000; z-index: 2;">
+            THE REAL LUDO KING</h1>
+    </center>
+
+    <div class="boxContain">
+        <div class="boxes"> </div>
+        <div class="boxes"> </div>
+        <div class="boxes"> </div>
+        <div class="boxes"> </div>
+        <div class="boxes"> </div>
+        <div class="boxes"> </div>
+        <div class="boxes"> </div>
     </div>
+
+    <div class="container">
+        <h1>Here You Can Play Your Dream Game The Legend Game Ludo</h1>
+        <div class="dice-wrapper">
+            <p>Click yes If You Want to Play &#169;</p>
+            <br>
+        </div>
+        <div class="buttons">
+            <a href="/front.html"> <button class="glow-on-hover">yes</button></a>
+            <a href="/index.html" onclick="noChange()"> <button class="glow-on-hover">No</button></a>
+        </div>
+
+    </div>
+    <!-- <div class="newBox"><img src="/dice-1.png" alt="" height="80px" width="80px"></div> -->
 </body>
-<script>
-    let images=[
-    "dice-1.png",
-    "dice-2.png",
-    "dice-3.png",
-    "dice-4.png",
-    "dice-5.png",
-    "dice-5.png"
-];
-
-
-
-console.log(img1);
-
-
-    let button=document.querySelector("button");
-
-    button.addEventListener("click",()=>{
-        let r1Num=Math.floor(Math.random)*6;
-        let r2Num=Math.floor(Math.random)*6;
-    
-        let img1=document.querySelector("#die1");
-        let img2=document.querySelector("#die2");
-    
-        img1.setAttribute("src",images[r1Num]);
-    img2.setAttribute("src",images[r2Num]);
-    })
+<script src="index.js">
+    let x = 1;
+    const parant = () => {
+        let myV = 2;
+        console.log(x);
+        console.log(myV);
+        const child = () => {
+                console.log(x+=5);
+                console.log(x+=1);
+        }
+        return child;
+    }
+    const result=parant();
+    console.log(result);
+    result();
 </script>
+
 </html>
